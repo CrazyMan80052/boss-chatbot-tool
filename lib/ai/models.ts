@@ -18,4 +18,9 @@ export const chatModels: ChatModel[] = [
     description:
       "Uses advanced chain-of-thought reasoning for complex problems",
   },
+  {
+    id: "gpt",
+    name: "Chat GPT",
+    description: "Chat GPT model",
+  }
 ];
