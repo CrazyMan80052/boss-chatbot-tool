@@ -79,12 +79,12 @@ export default function RootLayout({
           <ul className="mx-auto flex max-w-4xl justify-center gap-8 py-3">
             <li>
               <Button asChild size="default" variant="ghost">
-                <Link href="/">Home</Link>
+                <Link href="/home">Home</Link>
               </Button>
             </li>
             <li>
               <Button asChild size="default" variant="ghost">
-                <Link href="/repair-bot">Repair Bot</Link>
+                <Link href="/">Repair Bot</Link>
               </Button>
             </li>
             <li>
