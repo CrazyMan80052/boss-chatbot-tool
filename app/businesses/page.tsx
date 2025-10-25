@@ -40,7 +40,7 @@ export default function ViewBusiness() {
     >
       {/* Large title at top */}
       <header style={{ width: "100%", textAlign: "center", marginBottom: 24 }}>
-        <h1 style={{ fontSize: "3.25rem", fontWeight: 900 }}>Buisness name</h1>
+        <h1 style={{ fontSize: "3.25rem", fontWeight: 900 }}>Business name</h1>
       </header>
 
       {/* Massive "table" in the middle (semantic table with clickable rows) */}
