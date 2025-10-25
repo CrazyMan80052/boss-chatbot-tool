@@ -14,55 +14,6 @@ export default function HomePage() {
         background: "#000000ff",
       }}
     >
-      {/* Top center links */}
-      <header
-        style={{
-          position: "absolute",
-          top: 32,
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <nav style={{ display: "flex", gap: 16 }}>
-          <Link
-            aria-label="Customer Information"
-            href="/customer information"
-            style={{
-              display: "inline-block",
-              padding: "0.5rem 0.75rem",
-              background: "#c505ffff",
-              color: "#000000ff",
-              borderRadius: 8,
-              border: "2px solid rgba(0, 0, 0, 1)",
-              boxShadow: "0 6px 12px rgba(0,0,0,0.06)",
-              fontSize: 14,
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Customer Information
-          </Link>
-          <Link
-            aria-label="Buisness Infromation"
-            href="/buisness information"
-            style={{
-              display: "inline-block",
-              padding: "0.5rem 0.75rem",
-              background: "#c300ffff",
-              color: "#000000ff",
-              borderRadius: 8,
-              border: "2px solid rgba(0, 0, 0, 1)",
-              boxShadow: "0 6px 12px rgba(0,0,0,0.06)",
-              fontSize: 14,
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Buisness Information
-          </Link>
-        </nav>
-      </header>
-
       {/* Centered massive header */}
       <main
         style={{
@@ -97,16 +48,19 @@ export default function HomePage() {
       >
         <Link
           aria-label="Open Chat"
-          href="/chat"
+          href="/"
           style={{
             display: "inline-block",
-            padding: "0.5rem 1.5rem",
+            padding: "1rem 3rem",
+            minWidth: 260,
+            textAlign: "center",
             background: "#c504ffff",
             color: "#000000ff",
-            borderRadius: 8,
-            boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+            borderRadius: 12,
+            boxShadow: "0 6px 14px rgba(0,0,0,0.12)",
             textDecoration: "none",
-            fontWeight: 600,
+            fontWeight: 700,
+            fontSize: 18,
           }}
         >
           Open Chat
