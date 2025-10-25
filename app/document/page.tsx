@@ -10,9 +10,19 @@ import { getDocumentsById } from "@/lib/db/queries";
 export default async function DocumentPage({
   searchParams,
 }: {
-  searchParams: { id?: string };
+  // Next's searchParams can be string | string[] | undefined for each key
+  // and in some Next versions it may be a Promise that should be awaited.
+  searchParams?:
+    | { [key: string]: string | string[] | undefined }
+    | Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const id = searchParams?.id;
+  // Resolve searchParams whether it's a plain object or a Promise (per Next's warning)
+  const params = (await Promise.resolve(searchParams)) as
+    | { [key: string]: string | string[] | undefined }
+    | undefined;
+
+  const rawId = params?.id;
+  const id = Array.isArray(rawId) ? rawId[0] : (rawId as string | undefined);
 
   if (!id) {
     return notFound();

@@ -11,9 +11,11 @@ import { generateUUID } from "@/lib/utils";
 type CreateDocumentProps = {
   session: Session;
   dataStream: UIMessageStreamWriter<ChatMessage>;
+  // Optional chat id to tie the created document to a chat (reuse by chat id)
+  chatId?: string;
 };
 
-export const createDocument = ({ session, dataStream }: CreateDocumentProps) =>
+export const createDocument = ({ session, dataStream, chatId }: CreateDocumentProps) =>
   tool({
     description:
       "Create a document for a writing or content creation activities. This tool will call other functions that will generate the contents of the document based on the title and kind.",
@@ -22,7 +24,9 @@ export const createDocument = ({ session, dataStream }: CreateDocumentProps) =>
       kind: z.enum(artifactKinds),
     }),
     execute: async ({ title, kind }) => {
-      const id = generateUUID();
+      // If a chatId is provided, reuse it as the document id so documents can be
+      // looked up by chat id later. Otherwise generate a new id.
+      const id = chatId ?? generateUUID();
 
       dataStream.write({
         type: "data-kind",
