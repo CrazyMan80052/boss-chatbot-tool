@@ -13,6 +13,7 @@ export const myProvider = isTestEnvironment
         chatModel,
         reasoningModel,
         titleModel,
+        gptModel
       } = require("./models.mock");
       return customProvider({
         languageModels: {
@@ -20,6 +21,7 @@ export const myProvider = isTestEnvironment
           "chat-model-reasoning": reasoningModel,
           "title-model": titleModel,
           "artifact-model": artifactModel,
+          "gpt" : gptModel
         },
       });
     })()
@@ -32,5 +34,6 @@ export const myProvider = isTestEnvironment
         }),
         "title-model": gateway.languageModel("xai/grok-2-1212"),
         "artifact-model": gateway.languageModel("xai/grok-2-1212"),
+        "gpt": gateway.languageModel("openai/gpt-5-nano")
       },
     });

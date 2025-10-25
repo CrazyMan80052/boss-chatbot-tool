@@ -4,7 +4,10 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
+
+import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chat.vercel.ai"),
@@ -72,6 +75,25 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <nav aria-label="Main" className="w-full border-b">
+          <ul className="mx-auto flex max-w-4xl justify-center gap-8 py-3">
+            <li>
+              <Button asChild size="default" variant="ghost">
+                <Link href="/home">Home</Link>
+              </Button>
+            </li>
+            <li>
+              <Button asChild size="default" variant="ghost">
+                <Link href="/">Repair Bot</Link>
+              </Button>
+            </li>
+            <li>
+              <Button asChild size="default" variant="ghost">
+                <Link href="/businesses">View Businesses</Link>
+              </Button>
+            </li>
+          </ul>
+        </nav>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
