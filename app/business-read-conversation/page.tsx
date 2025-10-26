@@ -23,12 +23,29 @@ const testData = [
     confidenceLevel: "Medium",
     chatId: "ec4ebb41-4564-4770-99f1-c4d08896055e",
   },
+  {
+    name: "Mary",
+    reportName: "2010 BMW M3 Engine Issue",
+    confidenceLevel: "Medium",
+    chatId: "binging",
+  },
+  {
+    name: "Jimmy",
+    reportName: "2020 Porsche 911 GT3 Vibration At High Speed",
+    confidenceLevel: "High",
+    chatId: "brown",
+  },
+  {
+    name: "Arjun",
+    reportName: "2025 Mercedes S Class Wiper Problem",
+    confidenceLevel: "Low",
+    chatId: "5e",
+  },
 ];
 
 export default function BusinessReadConversation() {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead>Customer Name</TableHead>
