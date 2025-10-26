@@ -22,7 +22,7 @@ export default function HomePage() {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          color: "#c401ffff",
+          color: "#ffffffff",
         }}
       >
         <h1
@@ -54,7 +54,7 @@ export default function HomePage() {
             padding: "1rem 3rem",
             minWidth: 260,
             textAlign: "center",
-            background: "#c504ffff",
+            background: "#ffffffff",
             color: "#000000ff",
             borderRadius: 12,
             boxShadow: "0 6px 14px rgba(0,0,0,0.12)",
