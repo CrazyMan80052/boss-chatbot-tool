@@ -192,7 +192,8 @@ export async function POST(request: Request) {
           experimental_transform: smoothStream({ chunking: "word" }),
           tools: {
             getWeather,
-            createDocument: createDocument({ session, dataStream }),
+            // Pass the chat id so documents can be tied to and reused by chat id
+            createDocument: createDocument({ session, dataStream, chatId: id }),
             updateDocument: updateDocument({ session, dataStream }),
             requestSuggestions: requestSuggestions({
               session,
